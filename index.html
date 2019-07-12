@@ -182,6 +182,20 @@
 
   <!-- Kasteel -->
   <section class="kasteel text-center" id="contact">
+      <div id="map"></div>
+      <script>
+          // Initialize and add the map
+          function initMap() {
+              // The location of Coevorden
+              var coevorden = { lat: 52.661, lng: 6.741 };
+              // The map, centered at Coevorden
+              var map = new google.maps.Map(
+                  document.getElementById('map'), { zoom: 14, center: coevorden });
+              // The marker, positioned at Coevorden
+              var marker = new google.maps.Marker({ position: coevorden, map: map });
+          }
+      </script>
+
       <div class="container">
       <h3>01001010   01100001   01100011   01100011   01101111</h3>
       </div>
@@ -216,6 +230,9 @@
   <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+
+  <!-- Google Maps script -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSJDlk3TsVW3A6sWeP3qzixU-bh_4tvjM&callback=initMap"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
